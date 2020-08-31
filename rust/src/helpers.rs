@@ -60,7 +60,7 @@ pub extern "C" fn isSymbol(s: *mut libc::c_char) -> libc::c_double {
     const g: *const i8 = "g".as_ptr() as *const i8;
 
     let s_str = unsafe { char_ptr_to_string(s) };
-    match s_str.as_str() {   // missing infinity
+    match s_str.as_str() {
         "e" => E,
         "pi" => PI,
         "rand" => rand::thread_rng().gen::<libc::c_double>(),
