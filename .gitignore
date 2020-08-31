@@ -1,3 +1,6 @@
 *.txt
 *.out
 *.o
+
+calc
+rust/target
