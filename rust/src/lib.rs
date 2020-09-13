@@ -3,10 +3,18 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
+use std::ffi::CString;
+
 mod helpers;
+
+fn str_to_c_char_ptr(s: &str) -> *mut libc::c_char {
+    let c_str = CString::new(s.as_bytes()).unwrap_or_default();
+    return c_str.into_raw() as *mut libc::c_char;
+}
 
 #[cfg(test)]
 mod tests {
+    use super::str_to_c_char_ptr;
     use crate::helpers::*;
 
     #[test]
