@@ -26,27 +26,27 @@ lazy_static! {
 lazy_static! {
     pub static ref functions: HashMap<String, libc::c_int> = {
         let mut map = HashMap::new();
-        map.insert(String::from("sin"), 0);
-        map.insert(String::from("cos"), 1);
-        map.insert(String::from("tan"), 2);
-        map.insert(String::from("asin"), 3);
-        map.insert(String::from("acos"), 4);
-        map.insert(String::from("atan"), 5);
-        map.insert(String::from("sinh"), 6);
-        map.insert(String::from("cosh"), 7);
-        map.insert(String::from("tanh"), 8);
+        map.insert(String::from("sin"),   0);
+        map.insert(String::from("cos"),   1);
+        map.insert(String::from("tan"),   2);
+        map.insert(String::from("asin"),  3);
+        map.insert(String::from("acos"),  4);
+        map.insert(String::from("atan"),  5);
+        map.insert(String::from("sinh"),  6);
+        map.insert(String::from("cosh"),  7);
+        map.insert(String::from("tanh"),  8);
         map.insert(String::from("asinh"), 9);
         map.insert(String::from("acosh"), 10);
         map.insert(String::from("atanh"), 11);
-        map.insert(String::from("exp"), 12);
+        map.insert(String::from("exp"),   12);
         map.insert(String::from("floor"), 13);
-        map.insert(String::from("ceil"), 14);
+        map.insert(String::from("ceil"),  14);
         map.insert(String::from("round"), 15);
-        map.insert(String::from("log"), 16);
-        map.insert(String::from("ln"), 17);
-        map.insert(String::from("sqrt"), 18);
-        map.insert(String::from("abs"), 19);
-        map.insert(String::from("sgn"), 20);
+        map.insert(String::from("log"),   16);
+        map.insert(String::from("ln"),    17);
+        map.insert(String::from("sqrt"),  18);
+        map.insert(String::from("abs"),   19);
+        map.insert(String::from("sgn"),   20);
         map
     };
 }
