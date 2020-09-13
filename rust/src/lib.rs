@@ -3,18 +3,14 @@
 #![allow(non_snake_case)]
 #![allow(unused)]
 
-use std::ffi::CString;
-
+mod conversions;
+mod definitions;
 mod helpers;
-
-fn str_to_c_char_ptr(s: &str) -> *mut libc::c_char {
-    let c_str = CString::new(s.as_bytes()).unwrap_or_default();
-    return c_str.into_raw() as *mut libc::c_char;
-}
 
 #[cfg(test)]
 mod tests {
-    use super::str_to_c_char_ptr;
+    use crate::conversions::str_to_c_char_ptr;
+    use crate::definitions::{ G, E, PI, INF };
     use crate::helpers::*;
 
     #[test]
@@ -36,11 +32,13 @@ mod tests {
         assert_eq!(isSymbol(str_to_c_char_ptr("e")), E);
         assert_eq!(isSymbol(str_to_c_char_ptr("pi")), PI);
         assert_eq!(isSymbol(str_to_c_char_ptr("g")), G);
+        assert_eq!(isSymbol(str_to_c_char_ptr("inf")), INF);
     }
 
     #[test]
     fn factorial_works() {
         assert_eq!(factorial(4.0), 24.0);
+        assert_eq!(format!("{:.5}", factorial(5.6)), "385.78176");
     }
 
     #[test]
